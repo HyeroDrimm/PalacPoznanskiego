@@ -6,55 +6,72 @@ using UnityEngine;
 public class Catapult : MonoBehaviour
 {
     [SerializeField] private CatapultUI catapultUi;
-    [SerializeField] private float rotationAngle = 1;
-    [SerializeField] private float stengthDelta = 0.01f;
-    [SerializeField] private float catapultStrength = 10;
     [SerializeField] private Rigidbody poznanski;
     [SerializeField] private Transform reloadPoint;
+    [SerializeField] private float rotationChange = 1;
+    [SerializeField] private float stengthChange = 0.01f;
+    [SerializeField] private float angleChange;
+    [SerializeField] private float strengthMultiplier = 10;
+
     private AimingState aimingState = AimingState.Shooting;
-
+    private float angle = 0.5f;
     private float strength = 1;
-    private Vector3 aimVector = new(1, 1, 0);
+    private Rigidbody rb;
 
-    // Update is called once per frame
+    void Start()
+    {
+        catapultUi.UpdateAngle(angle);
+        catapultUi.UpdateStrength(strength);
+        rb = GetComponent<Rigidbody>();
+    }
+
     private void Update()
     {
         if (aimingState == AimingState.Shooting)
         {
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                transform.Rotate(Vector3.up, rotationAngle * Time.deltaTime);
+                transform.Rotate(Vector3.up, -rotationChange * Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                transform.Rotate(Vector3.up, -rotationAngle * Time.deltaTime);
+                transform.Rotate(Vector3.up, rotationChange * Time.deltaTime);
             }
 
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                strength = Math.Clamp(strength + stengthDelta * Time.deltaTime, 0, 1);
-                print(strength);
-                catapultUi.UpdateStrength(strength);
+                angle = Math.Clamp(angle + angleChange * Time.deltaTime, 0.1f, 0.9f);
+                catapultUi.UpdateAngle(angle);
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                strength = Math.Clamp(strength - stengthDelta * Time.deltaTime, 0, 1);
-                catapultUi.UpdateStrength(strength);
+                angle = Math.Clamp(angle - angleChange * Time.deltaTime, 0.1f, 0.9f);
+                catapultUi.UpdateAngle(angle);
             }
 
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
             {
+                aimingState = AimingState.SetingStrength;
+            }
+        }
+        else if (aimingState == AimingState.SetingStrength)
+        {
+            strength = (Mathf.Sin(Time.time * stengthChange) + 1) / 2;
+            print(strength);
+            catapultUi.UpdateStrength(strength);
+            if (Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space))
+            {
                 catapultUi.SetVisibility(false);
                 aimingState = AimingState.Idle;
                 Shoot();
-
             }
         }
     }
 
     private void Shoot()
     {
-        poznanski.AddRelativeForce(aimVector * Mathf.Clamp01(strength + 0.1f) * catapultStrength);
+        var aimVector = Quaternion.AngleAxis(angle * 90, Vector3.forward) * Vector3.right;
+        poznanski.AddForce(transform.TransformDirection(aimVector) * Mathf.Clamp01(strength + 0.1f) * strengthMultiplier);
     }
 
     public void Reload()
@@ -74,5 +91,6 @@ public class Catapult : MonoBehaviour
     {
         Idle,
         Shooting,
+        SetingStrength,
     }
 }
