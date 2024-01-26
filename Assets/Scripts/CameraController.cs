@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {   
     [SerializeField]
-    public Transform characterTransform;
+    private float shootForce;
+    [SerializeField]
+    private GameObject BulletPref;
+    [SerializeField]
+    //public Transform characterTransform;
 
     Vector3 cameraOffset;
 
@@ -34,7 +39,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         RotateCamera();
-        MoveCamera();
+        ShootProjectile();
     }
 
     private void RotateCamera()
@@ -49,11 +54,17 @@ public class CameraController : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f,90f);
 
         transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
-        characterTransform.localRotation = Quaternion.Euler(0, yRotation, 0);
+        //characterTransform.localRotation = Quaternion.Euler(0, yRotation, 0);
     }
 
-    private void MoveCamera()
+    private void ShootProjectile()
     {
-        transform.position = characterTransform.transform.position + cameraOffset;
+        if(Input.GetButtonDown("Fire1"))
+        {
+            Debug.Log("Fire!");
+            GameObject bulletTmp=Instantiate(BulletPref, transform.position, Quaternion.identity);
+            bulletTmp.GetComponent<Rigidbody>().AddForce(transform.forward*shootForce);
+            Destroy(bulletTmp.gameObject, 10);
+        }
     }
 }
