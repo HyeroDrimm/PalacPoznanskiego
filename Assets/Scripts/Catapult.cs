@@ -57,7 +57,6 @@ public class Catapult : MonoBehaviour
         else if (aimingState == AimingState.SetingStrength)
         {
             strength = (Mathf.Sin(Time.time * stengthChange) + 1) / 2;
-            print(strength);
             catapultUi.UpdateStrength(strength);
             if (Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space))
             {

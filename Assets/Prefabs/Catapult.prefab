@@ -49,10 +49,10 @@ MonoBehaviour:
   catapultUi: {fileID: 0}
   poznanski: {fileID: 0}
   reloadPoint: {fileID: 7404557911368256318}
-  rotationChange: 5
-  stengthChange: 0.01
+  rotationChange: 15
+  stengthChange: 10
   angleChange: 0.5
-  strengthMultiplier: 10
+  strengthMultiplier: 50000
 --- !u!1 &8844748567032133619
 GameObject:
   m_ObjectHideFlags: 0
