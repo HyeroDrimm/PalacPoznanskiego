@@ -7,16 +7,13 @@ using JetBrains.Annotations;
 public class PalaceController: MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> MorrisItems;
-    [SerializeField]
-    private GameObject MoneyPref;
-    [SerializeField]
-    private GameObject KeysPref;
+    private List<GameObject> MorrisItemsList;
+
     public static PalaceController palaceController { get; private set; }
     private void Awake() 
     {
-        SetUpMorrisItems();
-        SetupSingleton();
+        SetupPalaceController();
+        SetUpMorrisItemsList();
         Debug.Log("Palac jest obsługiwany moj panie!"); 
     }
 
@@ -26,12 +23,12 @@ public class PalaceController: MonoBehaviour
         switch(_palaceStates)
         {
             case "Money":
-                MorrisItems.Single(go => go.name == "Money").SetActive(false);
-                MorrisItems.Single(go => go.name == "Keys").SetActive(true);
+                MorrisItemsList.Single(go => go.name == "Money").SetActive(false);
+                MorrisItemsList.Single(go => go.name == "Keys").SetActive(true);
                 break;
             case "Keys":
-                MorrisItems.Single(go => go.name == "Money").SetActive(true);
-                MorrisItems.Single(go => go.name == "Keys").SetActive(false);
+                MorrisItemsList.Single(go => go.name == "Money").SetActive(true);
+                MorrisItemsList.Single(go => go.name == "Keys").SetActive(false);
                 break;
             default:
                 Debug.Log("this state doesn't exist");
@@ -39,16 +36,16 @@ public class PalaceController: MonoBehaviour
         }
     }
 
-    private void SetUpMorrisItems()
+    private void SetUpMorrisItemsList()
     {
-        foreach(GameObject item in MorrisItems)
+        foreach(GameObject item in MorrisItemsList)
         {
             item.SetActive(false);
         }
-        MorrisItems.Single(go => go.name == "Money").SetActive(true);
+        MorrisItemsList.Single(go => go.name == "Money").SetActive(true);
     }
 
-    private void SetupSingleton()
+    private void SetupPalaceController()
     {
         if (palaceController != null && palaceController != this) 
         { 
