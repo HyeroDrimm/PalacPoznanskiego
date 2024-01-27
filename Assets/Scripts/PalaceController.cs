@@ -8,6 +8,8 @@ public class PalaceController: MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> MorrisItemsList;
+    [SerializeField]
+    private List<GameObject> MorrisItemsImagesList;
 
     public static PalaceController palaceController { get; private set; }
     private void Awake() 
@@ -24,11 +26,23 @@ public class PalaceController: MonoBehaviour
         {
             case "Money":
                 MorrisItemsList.Single(go => go.name == "Money").SetActive(false);
-                MorrisItemsList.Single(go => go.name == "Keys").SetActive(true);
+                MorrisItemsImagesList.Single(go => go.name == "MoneyPanel").SetActive(true);
                 break;
             case "Keys":
-                MorrisItemsList.Single(go => go.name == "Money").SetActive(true);
                 MorrisItemsList.Single(go => go.name == "Keys").SetActive(false);
+                MorrisItemsImagesList.Single(go => go.name == "KeysPanel").SetActive(true);
+                break;
+            case "MommyKiss":
+                MorrisItemsList.Single(go => go.name == "MommyKiss").SetActive(false);
+                MorrisItemsImagesList.Single(go => go.name == "MommyKissPanel").SetActive(true);
+                break;
+            case "EuDeToilette":
+                MorrisItemsList.Single(go => go.name == "EuDeToilette").SetActive(false);
+                MorrisItemsImagesList.Single(go => go.name == "EuDeToilettePanel").SetActive(true);
+                break;
+            case "PocketWatch":
+                MorrisItemsList.Single(go => go.name == "PocketWatch").SetActive(false);
+                MorrisItemsImagesList.Single(go => go.name == "PocketWatchPanel").SetActive(true);
                 break;
             default:
                 Debug.Log("this state doesn't exist");
