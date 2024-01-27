@@ -40,23 +40,23 @@ public class Catapult : MonoBehaviour
     {
         if (aimingState == AimingState.Shooting)
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
                 Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, 1, 0) * -rotationChange * Time.fixedDeltaTime);
                 rb.MoveRotation(rb.rotation * deltaRotation);
             }
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
                 Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, 1, 0) * rotationChange * Time.fixedDeltaTime);
                 rb.MoveRotation(rb.rotation * deltaRotation);
             }
 
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
                 angle = Math.Clamp(angle + angleChange * Time.deltaTime, 0.1f, 0.9f);
                 catapultUi.UpdateAngle(angle);
             }
-            if (Input.GetKey(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
             {
                 angle = Math.Clamp(angle - angleChange * Time.deltaTime, 0.1f, 0.9f);
                 catapultUi.UpdateAngle(angle);
