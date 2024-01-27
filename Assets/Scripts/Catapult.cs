@@ -35,11 +35,13 @@ public class Catapult : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                transform.Rotate(Vector3.up, -rotationChange * Time.deltaTime);
+                Quaternion deltaRotation = Quaternion.Euler(new Vector3(0,1,0) * -rotationChange * Time.fixedDeltaTime);
+                rb.MoveRotation(rb.rotation * deltaRotation);
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                transform.Rotate(Vector3.up, rotationChange * Time.deltaTime);
+                Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, 1, 0) * rotationChange * Time.fixedDeltaTime);
+                rb.MoveRotation(rb.rotation * deltaRotation);
             }
 
             if (Input.GetKey(KeyCode.UpArrow))
