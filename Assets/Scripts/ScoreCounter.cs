@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class ScoreCounter : MonoBehaviour
 {
+    [SerializeField]
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        rb=GetComponent<Rigidbody>();
+        //rb=GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame

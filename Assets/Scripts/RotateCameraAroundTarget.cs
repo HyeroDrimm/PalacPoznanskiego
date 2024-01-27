@@ -37,7 +37,6 @@ public class RotateCameraAroundTarget : MonoBehaviour
             mouseInput=Input.GetAxis("Mouse X")*mouseSensitivity/Time.deltaTime;
             mouseInput=Mathf.Clamp(mouseInput, -90f,90f);
 
-
             Debug.Log(transform.rotation.y);
             transform.RotateAround(targetTransform.position, transform.up, mouseInput);
         }

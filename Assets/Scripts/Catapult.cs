@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Catapult : MonoBehaviour
 {
@@ -18,8 +19,11 @@ public class Catapult : MonoBehaviour
     private float strength = 1;
     private Rigidbody rb;
 
+    private bool isLunched;
+
     void Start()
     {
+        isLunched=false;
         catapultUi.UpdateAngle(angle);
         catapultUi.UpdateStrength(strength);
         rb = GetComponent<Rigidbody>();
@@ -65,10 +69,17 @@ public class Catapult : MonoBehaviour
                 Shoot();
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
     }
 
     private void Shoot()
     {
+        isLunched=true;
         var aimVector = Quaternion.AngleAxis(angle * 90, Vector3.forward) * Vector3.right;
         poznanski.AddForce(transform.TransformDirection(aimVector) * Mathf.Clamp01(strength + 0.1f) * strengthMultiplier);
     }
@@ -91,5 +102,10 @@ public class Catapult : MonoBehaviour
         Idle,
         Shooting,
         SetingStrength,
+    }
+
+    public bool GetIsLunched()
+    {
+        return isLunched;
     }
 }
