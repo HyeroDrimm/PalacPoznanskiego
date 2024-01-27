@@ -98,15 +98,18 @@ public class Catapult : MonoBehaviour
 
     public void Reload()
     {
-        animationEnded = false;
-        lyzkaCollider.enabled = true;
-        catapultUi.SetVisibility(true);
-        var newPoznanski = Instantiate(poznanskiPrefab, reloadPoint.position, reloadPoint.rotation);
-        poznanski = newPoznanski.Spine1;
-        rotateCameraAroundTarget.poznanski = newPoznanski.Spine1.transform;
-        rotateCameraAroundTarget.TeleportToCatapult();
-        scoreCounter.rb = newPoznanski.Spine1;
-        aimingState = AimingState.Shooting;
+        if(GetShootingState()==AimingState.Idle)
+        {
+            animationEnded = false;
+            lyzkaCollider.enabled = true;
+            catapultUi.SetVisibility(true);
+            var newPoznanski = Instantiate(poznanskiPrefab, reloadPoint.position, reloadPoint.rotation);
+            poznanski = newPoznanski.Spine1;
+            rotateCameraAroundTarget.poznanski = newPoznanski.Spine1.transform;
+            rotateCameraAroundTarget.TeleportToCatapult();
+            scoreCounter.rb = newPoznanski.Spine1;
+            aimingState = AimingState.Shooting;
+        }
     }
 
     public void SetShootingState(AimingState aimingState)
