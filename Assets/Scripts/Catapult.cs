@@ -97,6 +97,11 @@ public class Catapult : MonoBehaviour
         this.aimingState = aimingState;
     }
 
+    public AimingState GetShootingState()
+    {
+        return aimingState;
+    }
+
     public enum AimingState
     {
         Idle,
