@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MorrisItemsList: []
+  MorrisItemsImagesList: []
 --- !u!114 &5216243599759652913
 MonoBehaviour:
   m_ObjectHideFlags: 0

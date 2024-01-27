@@ -14,6 +14,7 @@ public class Catapult : MonoBehaviour
     [SerializeField] private Transform reloadPoint;
     [SerializeField] private Animator catapultAnimator;
     [SerializeField] private Collider lyzkaCollider;
+    [SerializeField] private FollowPoznanski moneyFollowPoznanski;
     [SerializeField] private float rotationChange = 1;
     [SerializeField] private float stengthChange = 0.01f;
     [SerializeField] private float angleChange;
@@ -98,18 +99,16 @@ public class Catapult : MonoBehaviour
 
     public void Reload()
     {
-        if(GetShootingState()==AimingState.Idle)
-        {
-            animationEnded = false;
-            lyzkaCollider.enabled = true;
-            catapultUi.SetVisibility(true);
-            var newPoznanski = Instantiate(poznanskiPrefab, reloadPoint.position, reloadPoint.rotation);
-            poznanski = newPoznanski.Spine1;
-            rotateCameraAroundTarget.poznanski = newPoznanski.Spine1.transform;
-            rotateCameraAroundTarget.TeleportToCatapult();
-            scoreCounter.rb = newPoznanski.Spine1;
-            aimingState = AimingState.Shooting;
-        }
+        animationEnded = false;
+        lyzkaCollider.enabled = true;
+        catapultUi.SetVisibility(true);
+        var newPoznanski = Instantiate(poznanskiPrefab, reloadPoint.position, reloadPoint.rotation);
+        poznanski = newPoznanski.Spine1;
+        rotateCameraAroundTarget.poznanski = newPoznanski.Spine1.transform;
+        rotateCameraAroundTarget.TeleportToCatapult();
+        scoreCounter.rb = newPoznanski.Spine1;
+        moneyFollowPoznanski.poznanski = newPoznanski.Spine1.transform;
+        aimingState = AimingState.Shooting;
     }
 
     public void SetShootingState(AimingState aimingState)

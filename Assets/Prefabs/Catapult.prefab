@@ -57,7 +57,7 @@ MonoBehaviour:
   catapultAnimator: {fileID: 2565108916021234185}
   lyzkaCollider: {fileID: 3143111869521482791}
   rotationChange: 15
-  stengthChange: 10
+  stengthChange: 5
   angleChange: 0.5
   strengthMultiplier: 50000
 --- !u!114 &3848503301516675944

@@ -3,7 +3,7 @@ using UnityEngine;
 public class FollowPoznanski : MonoBehaviour
 {
     [SerializeField] private Catapult catapult;
-    [SerializeField] private Transform poznanski;
+    [SerializeField] public Transform poznanski;
     [SerializeField] private Vector3 lookVector = new(-1, 1, 0);
     [SerializeField] private float distance = 10;
 
@@ -17,7 +17,6 @@ public class FollowPoznanski : MonoBehaviour
         {
             foreach (Transform child in transform)
             {
-                Debug.Log("activate vfx");
                 child.gameObject.SetActive(true);
             }
         }

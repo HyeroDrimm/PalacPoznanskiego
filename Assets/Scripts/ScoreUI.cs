@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class ScoreUI : MonoBehaviour
 {
     private TextMeshProUGUI scoreText;
-    private int scoreValue;
-     public static ScoreUI scoreUI { get; private set; }
+    private float scoreValue;
+    public static ScoreUI scoreUI { get; private set; }
 
     void Awake()
     {
@@ -17,8 +17,8 @@ public class ScoreUI : MonoBehaviour
 
     void Start()
     {
-        scoreText=GetComponent<TextMeshProUGUI>();
-        scoreValue=0;
+        scoreText = GetComponent<TextMeshProUGUI>();
+        scoreValue = 0;
         AddScore(0);
     }
 
@@ -36,12 +36,12 @@ public class ScoreUI : MonoBehaviour
 
     private void UpdateScore(string _scoreValue)
     {
-       scoreText.text =_scoreValue+" GLD";
+        scoreText.text = _scoreValue + " GLD";
     }
 
-    public void AddScore(int _scoreIncrement)
+    public void AddScore(float _scoreIncrement)
     {
-        scoreValue+=_scoreIncrement;
-        UpdateScore(scoreValue.ToString());
+        scoreValue += _scoreIncrement;
+        UpdateScore(Mathf.Round(scoreValue).ToString());
     }
 }

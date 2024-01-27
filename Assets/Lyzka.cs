@@ -7,7 +7,6 @@ public class Lyzka : MonoBehaviour
     [SerializeField] private Catapult catapult;
     private void AnimationEnd()
     {
-        print("hello");
         catapult.SetAnimationEnded(true);
     }
 }
