@@ -18,7 +18,7 @@ public class RotateCameraAroundTarget : MonoBehaviour
     float mouseSensitivity;
     float mouseInput;
     [SerializeField]
-    private Transform catapultPosition;
+    private Transform catapultCameraPosition;
 
     void Awake()
     {
@@ -46,7 +46,7 @@ public class RotateCameraAroundTarget : MonoBehaviour
 
     public void TeleportToCatapult()
     {
-        transform.position = catapultPosition.position;
-        transform.rotation = catapultPosition.rotation;
+        transform.position = catapultCameraPosition.position;
+        transform.rotation = catapultCameraPosition.rotation;
     }
 }
