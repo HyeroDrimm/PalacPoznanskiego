@@ -55,6 +55,8 @@ MonoBehaviour:
   scoreCounter: {fileID: 3848503301516675944}
   rotateCameraAroundTarget: {fileID: 0}
   reloadPoint: {fileID: 7404557911368256318}
+  catapultAnimator: {fileID: 0}
+  lyzkaCollider: {fileID: 0}
   rotationChange: 15
   stengthChange: 10
   angleChange: 0.5
@@ -282,6 +284,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -6628391092259299625, guid: db0d291fd26024241b9802e35d1f3213, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3143111869521482791}
+    - targetCorrespondingSourceObject: {fileID: -6628391092259299625, guid: db0d291fd26024241b9802e35d1f3213, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2565108916021234185}
+    - targetCorrespondingSourceObject: {fileID: -6628391092259299625, guid: db0d291fd26024241b9802e35d1f3213, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 533346430837230719}
   m_SourcePrefab: {fileID: 100100000, guid: db0d291fd26024241b9802e35d1f3213, type: 3}
 --- !u!1 &6623591291056725668 stripped
 GameObject:
@@ -310,6 +318,40 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2285025760755008069, guid: db0d291fd26024241b9802e35d1f3213, type: 3}
+--- !u!95 &2565108916021234185
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6623591291056725668}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 755a787670fa30f4c9e88c13827ad628, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &533346430837230719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6623591291056725668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0796f6772ebbee141abaf3e5f17e4a2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  catapult: {fileID: 6117086809799660920}
 --- !u!4 &8674558751391786904 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: db0d291fd26024241b9802e35d1f3213, type: 3}

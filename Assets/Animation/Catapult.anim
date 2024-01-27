@@ -27,19 +27,10 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.3
-        value: {x: -44.250557, y: 3.8304596, z: 4.1584816}
-        inSlope: {x: 46.014725, y: 15.572523, z: 11.568077}
-        outSlope: {x: 46.014725, y: 15.572523, z: 11.568077}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.3160868, z: 0.29636672}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
         time: 0.31666666
-        value: {x: -43.86, y: 4.077752, z: 4.341026}
-        inSlope: {x: 0, y: 14.109593, z: 10.343247}
-        outSlope: {x: 0, y: 14.109593, z: 10.343247}
+        value: {x: -43.86, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -152,15 +143,6 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.3
-        value: 3.8304596
-        inSlope: 15.572523
-        outSlope: 15.572523
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.3160868
-        outWeight: 0.33333334
-      - serializedVersion: 3
         time: 1.2666667
         value: 0
         inSlope: 0
@@ -189,15 +171,6 @@ AnimationClip:
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.3
-        value: 4.1584816
-        inSlope: 11.568077
-        outSlope: 11.568077
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.29636672
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.2666667
@@ -255,4 +228,11 @@ AnimationClip:
     flags: 0
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 1.25
+    functionName: AnimationEnd
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
