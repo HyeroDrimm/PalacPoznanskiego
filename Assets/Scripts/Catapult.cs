@@ -14,6 +14,7 @@ public class Catapult : MonoBehaviour
     [SerializeField] private Transform reloadPoint;
     [SerializeField] private Animator catapultAnimator;
     [SerializeField] private Collider lyzkaCollider;
+    [SerializeField] private FollowPoznanski moneyFollowPoznanski;
     [SerializeField] private float rotationChange = 1;
     [SerializeField] private float stengthChange = 0.01f;
     [SerializeField] private float angleChange;
@@ -106,6 +107,7 @@ public class Catapult : MonoBehaviour
         rotateCameraAroundTarget.poznanski = newPoznanski.Spine1.transform;
         rotateCameraAroundTarget.TeleportToCatapult();
         scoreCounter.rb = newPoznanski.Spine1;
+        moneyFollowPoznanski.poznanski = newPoznanski.Spine1.transform;
         aimingState = AimingState.Shooting;
     }
 
