@@ -201,6 +201,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &527282927 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 3143111869521482791, guid: ef8425f5b6a591046ac8d319234852d3, type: 3}
+  m_PrefabInstance: {fileID: 1453810601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &527282930 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2565108916021234185, guid: ef8425f5b6a591046ac8d319234852d3, type: 3}
+  m_PrefabInstance: {fileID: 1453810601}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &612610146
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,15 +765,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7744238133619367516}
     - target: {fileID: 6117086809799660920, guid: ef8425f5b6a591046ac8d319234852d3, type: 3}
+      propertyPath: lyzkaCollider
+      value: 
+      objectReference: {fileID: 527282927}
+    - target: {fileID: 6117086809799660920, guid: ef8425f5b6a591046ac8d319234852d3, type: 3}
       propertyPath: stengthChange
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6117086809799660920, guid: ef8425f5b6a591046ac8d319234852d3, type: 3}
+      propertyPath: catapultAnimator
+      value: 
+      objectReference: {fileID: 527282930}
     - target: {fileID: 6117086809799660920, guid: ef8425f5b6a591046ac8d319234852d3, type: 3}
       propertyPath: rotateCameraAroundTarget
       value: 
       objectReference: {fileID: 612610151}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 478781389449138473, guid: ef8425f5b6a591046ac8d319234852d3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef8425f5b6a591046ac8d319234852d3, type: 3}

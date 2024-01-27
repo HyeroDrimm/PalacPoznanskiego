@@ -12,6 +12,8 @@ public class Catapult : MonoBehaviour
     [SerializeField] private ScoreCounter scoreCounter;
     [SerializeField] private RotateCameraAroundTarget rotateCameraAroundTarget;
     [SerializeField] private Transform reloadPoint;
+    [SerializeField] private Animator catapultAnimator;
+    [SerializeField] private Collider lyzkaCollider;
     [SerializeField] private float rotationChange = 1;
     [SerializeField] private float stengthChange = 0.01f;
     [SerializeField] private float angleChange;
@@ -23,6 +25,7 @@ public class Catapult : MonoBehaviour
     private Rigidbody rb;
 
     private bool isLunched;
+    private bool animationEnded = true;
 
     void Start()
     {
@@ -69,14 +72,12 @@ public class Catapult : MonoBehaviour
             catapultUi.UpdateStrength(strength);
             if (Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space))
             {
-                catapultUi.SetVisibility(false);
-                aimingState = AimingState.Idle;
                 Shoot();
             }
         }
         else if (aimingState == AimingState.Idle)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R) && animationEnded)
             {
                 Reload();
             }
@@ -85,13 +86,20 @@ public class Catapult : MonoBehaviour
 
     private void Shoot()
     {
+        lyzkaCollider.enabled = false;
+        catapultAnimator.SetTrigger("DoIt");
+        catapultUi.SetVisibility(false);
+        aimingState = AimingState.Idle;
         isLunched = true;
         var aimVector = Quaternion.AngleAxis(angle * 90, Vector3.forward) * Vector3.right;
         poznanski.AddForce(transform.TransformDirection(aimVector) * Mathf.Clamp01(strength + 0.1f) * strengthMultiplier);
+
     }
 
     public void Reload()
     {
+        animationEnded = false;
+        lyzkaCollider.enabled = true;
         catapultUi.SetVisibility(true);
         var newPoznanski = Instantiate(poznanskiPrefab, reloadPoint.position, reloadPoint.rotation);
         poznanski = newPoznanski.Spine1;
@@ -121,5 +129,10 @@ public class Catapult : MonoBehaviour
     public bool GetIsLunched()
     {
         return isLunched;
+    }
+
+    public void SetAnimationEnded(bool state)
+    {
+        animationEnded = state;
     }
 }
