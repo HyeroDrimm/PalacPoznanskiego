@@ -36,7 +36,7 @@ public class ScoreUI : MonoBehaviour
 
     private void UpdateScore(string _scoreValue)
     {
-       scoreText.text =_scoreValue;
+       scoreText.text =_scoreValue+" GLD";
     }
 
     public void AddScore(int _scoreIncrement)
