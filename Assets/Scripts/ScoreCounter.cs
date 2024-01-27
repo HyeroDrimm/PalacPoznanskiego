@@ -17,16 +17,16 @@ public class ScoreCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(catapult.GetShootingState()==Catapult.AimingState.Idle)
+        if (catapult.GetShootingState() == Catapult.AimingState.Idle)
             IncrementScore();
     }
 
     void IncrementScore()
     {
-        if(rb.velocity.magnitude>1f)
+        if (rb.velocity.magnitude > 1f)
         {
-            ScoreUI.scoreUI.AddScore(Mathf.RoundToInt(100*Time.deltaTime));
-        }    
-           
+            ScoreUI.scoreUI.AddScore(100 * Time.deltaTime);
+        }
+
     }
 }
