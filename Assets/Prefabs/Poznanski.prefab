@@ -181,6 +181,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2513954142073508841}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e731fd2cbc4eb8640a4387712e3fb544, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8300608283297962597}
     - targetCorrespondingSourceObject: {fileID: -8699787447509501512, guid: e731fd2cbc4eb8640a4387712e3fb544, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8271007310035171357}
@@ -584,6 +587,25 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!1 &2453556305217128396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e731fd2cbc4eb8640a4387712e3fb544, type: 3}
+  m_PrefabInstance: {fileID: 3372529422470888093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8300608283297962597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453556305217128396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75ffe4bb92302b4faf1a697a75e08c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rigidbody: {fileID: 0}
+  Spine1: {fileID: 7844793936798843519}
 --- !u!1 &2993069442782790437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8699787447509501512, guid: e731fd2cbc4eb8640a4387712e3fb544, type: 3}
