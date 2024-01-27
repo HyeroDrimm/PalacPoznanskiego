@@ -87,6 +87,7 @@ public class Catapult : MonoBehaviour
 
     private void Shoot()
     {
+        moneyFollowPoznanski.SetEffectStatus(true);
         lyzkaCollider.enabled = false;
         catapultAnimator.SetTrigger("DoIt");
         catapultUi.SetVisibility(false);
@@ -102,6 +103,7 @@ public class Catapult : MonoBehaviour
         animationEnded = false;
         lyzkaCollider.enabled = true;
         catapultUi.SetVisibility(true);
+        moneyFollowPoznanski.SetEffectStatus(false);
         var newPoznanski = Instantiate(poznanskiPrefab, reloadPoint.position, reloadPoint.rotation);
         poznanski = newPoznanski.Spine1;
         rotateCameraAroundTarget.poznanski = newPoznanski.Spine1.transform;
@@ -109,6 +111,7 @@ public class Catapult : MonoBehaviour
         scoreCounter.rb = newPoznanski.Spine1;
         moneyFollowPoznanski.poznanski = newPoznanski.Spine1.transform;
         aimingState = AimingState.Shooting;
+        
     }
 
     public void SetShootingState(AimingState aimingState)

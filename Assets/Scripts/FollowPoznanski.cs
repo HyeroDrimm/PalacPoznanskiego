@@ -13,12 +13,21 @@ public class FollowPoznanski : MonoBehaviour
         //transform.LookAt(poznanski);
         transform.position=poznanski.position;
 
-        if(catapult.GetIsLunched())
+        //if(catapult.GetIsLunched())
         {
+            //foreach (Transform child in transform)
+            //{
+                //child.gameObject.SetActive(true);
+            //}
+        }
+    }
+
+    public void SetEffectStatus(bool _status)
+    {
             foreach (Transform child in transform)
             {
-                child.gameObject.SetActive(true);
+                Debug.Log("Działaj kurwa");
+                child.gameObject.SetActive(_status);
             }
-        }
     }
 }
