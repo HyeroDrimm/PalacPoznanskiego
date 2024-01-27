@@ -10,12 +10,13 @@ public class Teleport : MonoBehaviour
 
     private void TeleportThis(GameObject player)
     {
-        transform.position=teleportTo.position;
+        Debug.Log("teleport");
+        player.gameObject.GetComponent<Rigidbody>().Move(teleportTo.position, Quaternion.identity);
         Physics.SyncTransforms();
-        
+
     }
 
-    void CollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
