@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/palac_szymon.unity
+    guid: 16f00f6538ce31241a2b0eda780ded0d
   m_configObjects: {}

@@ -6,6 +6,8 @@ using UnityEngine;
 public class ScoreCounter : MonoBehaviour
 {
     [SerializeField]
+    private Catapult catapult;
+    [SerializeField]
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -16,8 +18,8 @@ public class ScoreCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        IncrementScore();
-        Debug.Log(rb.velocity.magnitude);
+        if(catapult.GetShootingState()==Catapult.AimingState.Idle)
+            IncrementScore();
     }
 
     void IncrementScore()

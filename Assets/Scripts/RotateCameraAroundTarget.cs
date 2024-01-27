@@ -29,16 +29,16 @@ public class RotateCameraAroundTarget : MonoBehaviour
     {
         if(catapult.GetShootingState()==Catapult.AimingState.Shooting)
         {
-            transform.position = poznanski.position + lookVector * distance;
-            transform.LookAt(poznanski);
-        }
-        else 
-        {
             mouseInput=Input.GetAxis("Mouse X")*mouseSensitivity/Time.deltaTime;
             mouseInput=Mathf.Clamp(mouseInput, -90f,90f);
 
-            Debug.Log(transform.rotation.y);
+            //Debug.Log(transform.rotation.y);
             transform.RotateAround(targetTransform.position, transform.up, mouseInput);
+        }
+        else
+        {
+            transform.position = poznanski.position + lookVector * distance;
+            transform.LookAt(poznanski);
         }
     }
 }
