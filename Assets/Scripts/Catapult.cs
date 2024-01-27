@@ -8,6 +8,9 @@ public class Catapult : MonoBehaviour
 {
     [SerializeField] private CatapultUI catapultUi;
     [SerializeField] private Rigidbody poznanski;
+    [SerializeField] private Poznanski poznanskiPrefab;
+    [SerializeField] private ScoreCounter scoreCounter;
+    [SerializeField] private RotateCameraAroundTarget rotateCameraAroundTarget;
     [SerializeField] private Transform reloadPoint;
     [SerializeField] private float rotationChange = 1;
     [SerializeField] private float stengthChange = 0.01f;
@@ -23,7 +26,7 @@ public class Catapult : MonoBehaviour
 
     void Start()
     {
-        isLunched=false;
+        isLunched = false;
         catapultUi.UpdateAngle(angle);
         catapultUi.UpdateStrength(strength);
         rb = GetComponent<Rigidbody>();
@@ -35,7 +38,7 @@ public class Catapult : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                Quaternion deltaRotation = Quaternion.Euler(new Vector3(0,1,0) * -rotationChange * Time.fixedDeltaTime);
+                Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, 1, 0) * -rotationChange * Time.fixedDeltaTime);
                 rb.MoveRotation(rb.rotation * deltaRotation);
             }
             if (Input.GetKey(KeyCode.RightArrow))
@@ -71,27 +74,31 @@ public class Catapult : MonoBehaviour
                 Shoot();
             }
         }
-
-        if(Input.GetKeyDown(KeyCode.R))
+        else if (aimingState == AimingState.Idle)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Reload();
+            }
         }
-
     }
 
     private void Shoot()
     {
-        isLunched=true;
+        isLunched = true;
         var aimVector = Quaternion.AngleAxis(angle * 90, Vector3.forward) * Vector3.right;
         poznanski.AddForce(transform.TransformDirection(aimVector) * Mathf.Clamp01(strength + 0.1f) * strengthMultiplier);
     }
 
     public void Reload()
     {
-        poznanski.rotation = Quaternion.identity;
-        poznanski.angularVelocity = Vector3.zero;
-        poznanski.velocity = Vector3.zero;
-        poznanski.position = reloadPoint.position;
+        catapultUi.SetVisibility(true);
+        var newPoznanski = Instantiate(poznanskiPrefab, reloadPoint.position, reloadPoint.rotation);
+        poznanski = newPoznanski.Spine1;
+        rotateCameraAroundTarget.poznanski = newPoznanski.Spine1.transform;
+        rotateCameraAroundTarget.TeleportToCatapult();
+        scoreCounter.rb = newPoznanski.Spine1;
+        aimingState = AimingState.Shooting;
     }
 
     public void SetShootingState(AimingState aimingState)

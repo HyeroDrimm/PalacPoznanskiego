@@ -7,8 +7,7 @@ public class ScoreCounter : MonoBehaviour
 {
     [SerializeField]
     private Catapult catapult;
-    [SerializeField]
-    private Rigidbody rb;
+    [SerializeField] public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
