@@ -77,14 +77,14 @@ public class Catapult : MonoBehaviour
             {
                 strength = (Mathf.Sin(Time.time * stengthChange) + 1) / 2;
                 catapultUi.UpdateStrength(strength);
-                if (Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space))
+                if (Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     Shoot();
                 }
             }
             else if (aimingState == AimingState.Idle)
             {
-                if (Input.GetKeyDown(KeyCode.R) && animationEnded)
+                if ((Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Space)) && animationEnded)
                 {
                     print(animationEnded);
                     Reload();

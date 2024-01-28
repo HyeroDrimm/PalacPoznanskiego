@@ -59,11 +59,11 @@ public class PalaceController: MonoBehaviour
 
     private void SetUpMorrisItemsList()
     {
-        foreach(GameObject item in MorrisItemsList)
+        /*foreach(GameObject item in MorrisItemsList)
         {
             item.SetActive(false);
         }
-        MorrisItemsList.Single(go => go.name == "Money").SetActive(true);
+        MorrisItemsList.Single(go => go.name == "Money").SetActive(true);*/
     }
 
     public void ShowEndScreen()
