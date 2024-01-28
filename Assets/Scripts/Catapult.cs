@@ -30,6 +30,7 @@ public class Catapult : MonoBehaviour
 
     private bool isLunched;
     private bool animationEnded = true;
+    public bool isInMenu = false;
 
     void Start()
     {
@@ -41,50 +42,53 @@ public class Catapult : MonoBehaviour
 
     private void Update()
     {
-        if (aimingState == AimingState.Shooting)
+        if (isInMenu == false)
         {
-            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+            if (aimingState == AimingState.Shooting)
             {
-                Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, 1, 0) * -rotationChange * Time.fixedDeltaTime);
-                rb.MoveRotation(rb.rotation * deltaRotation);
-            }
-            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-            {
-                Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, 1, 0) * rotationChange * Time.fixedDeltaTime);
-                rb.MoveRotation(rb.rotation * deltaRotation);
-            }
+                if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+                {
+                    Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, 1, 0) * -rotationChange * Time.fixedDeltaTime);
+                    rb.MoveRotation(rb.rotation * deltaRotation);
+                }
+                if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+                {
+                    Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, 1, 0) * rotationChange * Time.fixedDeltaTime);
+                    rb.MoveRotation(rb.rotation * deltaRotation);
+                }
 
-            if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-            {
-                angle = Math.Clamp(angle + angleChange * Time.deltaTime, 0.1f, 0.9f);
-                catapultUi.UpdateAngle(angle);
-            }
-            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-            {
-                angle = Math.Clamp(angle - angleChange * Time.deltaTime, 0.1f, 0.9f);
-                catapultUi.UpdateAngle(angle);
-            }
+                if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+                {
+                    angle = Math.Clamp(angle + angleChange * Time.deltaTime, 0.1f, 0.9f);
+                    catapultUi.UpdateAngle(angle);
+                }
+                if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+                {
+                    angle = Math.Clamp(angle - angleChange * Time.deltaTime, 0.1f, 0.9f);
+                    catapultUi.UpdateAngle(angle);
+                }
 
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
-            {
-                aimingState = AimingState.SetingStrength;
+                if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
+                {
+                    aimingState = AimingState.SetingStrength;
+                }
             }
-        }
-        else if (aimingState == AimingState.SetingStrength)
-        {
-            strength = (Mathf.Sin(Time.time * stengthChange) + 1) / 2;
-            catapultUi.UpdateStrength(strength);
-            if (Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space))
+            else if (aimingState == AimingState.SetingStrength)
             {
-                Shoot();
+                strength = (Mathf.Sin(Time.time * stengthChange) + 1) / 2;
+                catapultUi.UpdateStrength(strength);
+                if (Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space))
+                {
+                    Shoot();
+                }
             }
-        }
-        else if (aimingState == AimingState.Idle)
-        {
-            if (Input.GetKeyDown(KeyCode.R) && animationEnded)
+            else if (aimingState == AimingState.Idle)
             {
-                print(animationEnded);
-                Reload();
+                if (Input.GetKeyDown(KeyCode.R) && animationEnded)
+                {
+                    print(animationEnded);
+                    Reload();
+                }
             }
         }
     }
@@ -102,7 +106,7 @@ public class Catapult : MonoBehaviour
         var aimVector = Quaternion.AngleAxis(angle * 90, Vector3.forward) * Vector3.right;
         poznanski.AddForce(transform.TransformDirection(aimVector) * Mathf.Clamp01(strength + 0.1f) * strengthMultiplier);
         SFXController.specialEffects.PlayRandomVoiceSFX(transform);
-        
+
 
     }
 
