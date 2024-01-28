@@ -17,7 +17,7 @@ public class AttemptsUi : MonoBehaviour
 
     private void UpdateScore(string _scoreValue)
     {
-       attemptsText.text ="Attempts: "+_scoreValue +"/10";
+       attemptsText.text ="Próby: "+_scoreValue +"/10";
     }
 
     public void AddScore(int _scoreIncrement)

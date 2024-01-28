@@ -19,7 +19,7 @@ public class GuestGoalUI : MonoBehaviour
 
     private void UpdateScore(string _scoreValue)
     {
-       scoreText.text ="Guests: "+_scoreValue +"/3";
+       scoreText.text ="Goście: "+_scoreValue +"/3";
     }
 
     public void AddScore(int _scoreIncrement)
