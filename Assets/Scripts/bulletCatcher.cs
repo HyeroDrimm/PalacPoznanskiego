@@ -18,16 +18,17 @@ public class bulletCatcher : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player")&&!isHit)
+        if(other.gameObject.CompareTag("Player"))
         {
             other.gameObject.tag="Untagged";
             catapult.Reload();
-            if(this.gameObject.CompareTag("Goal"))
+            if(this.gameObject.CompareTag("Goal")&&!isHit)
             {
                 Destroy(other.gameObject.transform.root.gameObject);
                 guestGoalUI.AddScore(1);
                 //gameObject.SetActive(false);
                 isHit=true;
+                planks.SetActive(true);
             }
         }
     }
