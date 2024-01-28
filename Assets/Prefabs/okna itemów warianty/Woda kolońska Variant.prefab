@@ -1,0 +1,169 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4974657766937467641
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 271052641339305777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_text
+      value: "Woda kolo\u0144ska"
+      objectReference: {fileID: 0}
+    - target: {fileID: 271052641339305777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_fontSize
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 271052641339305777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_margin.x
+      value: -43.07843
+      objectReference: {fileID: 0}
+    - target: {fileID: 271052641339305777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_margin.z
+      value: -28.056702
+      objectReference: {fileID: 0}
+    - target: {fileID: 271052641339305777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829862746533406672, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 225
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829862746533406672, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829862746533406672, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829862746533406672, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829862746533406672, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829862746533406672, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9975641
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829862746533406672, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.06975647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829862746533406672, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242469931162075512, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -38
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465901056383795959, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_Name
+      value: "Woda kolo\u0144ska Variant"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465901056383795959, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092733328347892204, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_text
+      value: "Zapach prawdziwego d\u017C\u0119ntelmena w gustownym flakonie. Sprowadzono
+        \nje prosto z Pary\u017Ca. \n\nNiech nie tylko ci\u0119 widz\u0105. Niech
+        ci\u0119 czuj\u0105!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216037287054444357, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 39b904319d672d74aa9ea81c8f5833a3, type: 3}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335433164700860777, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0bfc2a35352d23040b7ae5338e0a6a1f, type: 3}
