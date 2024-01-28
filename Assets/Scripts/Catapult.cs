@@ -98,7 +98,7 @@ public class Catapult : MonoBehaviour
         var aimVector = Quaternion.AngleAxis(angle * 90, Vector3.forward) * Vector3.right;
         poznanski.AddForce(transform.TransformDirection(aimVector) * Mathf.Clamp01(strength + 0.1f) * strengthMultiplier);
         SFXController.specialEffects.PlayRandomVoiceSFX(transform);
-        attemptsUi.AddScore(1);
+        
 
     }
 
@@ -117,6 +117,7 @@ public class Catapult : MonoBehaviour
             scoreCounter.rb = newPoznanski.Spine1;
             moneyFollowPoznanski.poznanski = newPoznanski.Spine1.transform;
             aimingState = AimingState.Shooting;
+            attemptsUi.AddScore(1);
         }
     }
 
