@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 6744dd4050f584f4ab083444153666c2
+  - enabled: 1
     path: Assets/Scenes/palac_szymon.unity
     guid: 16f00f6538ce31241a2b0eda780ded0d
   - enabled: 1
