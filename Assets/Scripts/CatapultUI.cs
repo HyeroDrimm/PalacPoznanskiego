@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class CatapultUI : MonoBehaviour
 {
     [SerializeField] private Slider strenghtBar;
-    [SerializeField] private Image angle;
+    [SerializeField] private RectTransform arrowPixot;
 
     public void UpdateStrength(float strength)
     {
@@ -18,6 +18,6 @@ public class CatapultUI : MonoBehaviour
 
     public void UpdateAngle(float anglePercent)
     {
-        angle.fillAmount = 1-anglePercent;
+        arrowPixot.rotation = Quaternion.Euler(new Vector3(0, 0, (1 - anglePercent) * -90));
     }
 }

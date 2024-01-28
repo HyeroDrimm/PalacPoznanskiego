@@ -310,6 +310,10 @@ MonoBehaviour:
   shootForce: 1000
   BulletPref: {fileID: 9027632339196275346, guid: 3ead003ea19b89147898e1ca694adfd0, type: 3}
   cameraOffset: {x: 0, y: 0, z: 0}
+  mouseX: 0
+  mouseY: 0
+  xRotation: 0
+  yRotation: 0
   mouseSesitivity: 4.28
 --- !u!114 &612610151
 MonoBehaviour:
@@ -1042,6 +1046,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1699438092}
     m_Modifications:
+    - target: {fileID: 850396708535998328, guid: ac76fd5e43622f943bd2f2dec5fd1d8f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 25.9237
+      objectReference: {fileID: 0}
+    - target: {fileID: 850396708535998328, guid: ac76fd5e43622f943bd2f2dec5fd1d8f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 51.8475
+      objectReference: {fileID: 0}
+    - target: {fileID: 850396708535998328, guid: ac76fd5e43622f943bd2f2dec5fd1d8f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 850396708535998328, guid: ac76fd5e43622f943bd2f2dec5fd1d8f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 25.4237
+      objectReference: {fileID: 0}
+    - target: {fileID: 2942396204070841268, guid: ac76fd5e43622f943bd2f2dec5fd1d8f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2942396204070841268, guid: ac76fd5e43622f943bd2f2dec5fd1d8f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3573725930798619013, guid: ac76fd5e43622f943bd2f2dec5fd1d8f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1129,6 +1157,34 @@ PrefabInstance:
     - target: {fileID: 6984159398030149233, guid: ac76fd5e43622f943bd2f2dec5fd1d8f, type: 3}
       propertyPath: m_Name
       value: Catapult UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115126008738654698, guid: ac76fd5e43622f943bd2f2dec5fd1d8f, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115126008738654698, guid: ac76fd5e43622f943bd2f2dec5fd1d8f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115126008738654698, guid: ac76fd5e43622f943bd2f2dec5fd1d8f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115126008738654698, guid: ac76fd5e43622f943bd2f2dec5fd1d8f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 51.8593
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115126008738654698, guid: ac76fd5e43622f943bd2f2dec5fd1d8f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 51.859314
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115126008738654698, guid: ac76fd5e43622f943bd2f2dec5fd1d8f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115126008738654698, guid: ac76fd5e43622f943bd2f2dec5fd1d8f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 91
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
