@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: ca0f121d931f0ff46b40cf9f01ee186d
+guid: 4a8cf655362ea1a4eb450488380bb6cc
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pokoje
-    second: {fileID: 2100000, guid: f941a6554eafe284299c7710dde70bdb, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
