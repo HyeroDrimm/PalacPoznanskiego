@@ -26,5 +26,7 @@ public class GuestGoalUI : MonoBehaviour
     {
         scoreValue+=_scoreIncrement;
         UpdateScore(scoreValue.ToString());
+        if(scoreValue>=3)
+            PalaceController.palaceController.ShowEndScreen();
     }
 }

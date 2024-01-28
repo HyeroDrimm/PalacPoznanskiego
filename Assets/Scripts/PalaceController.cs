@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using JetBrains.Annotations;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class PalaceController: MonoBehaviour
 {
@@ -10,6 +12,9 @@ public class PalaceController: MonoBehaviour
     private List<GameObject> MorrisItemsList;
     [SerializeField]
     private List<GameObject> MorrisItemsImagesList;
+
+    [SerializeField]
+    private GameObject EndScreen;
 
     public static PalaceController palaceController { get; private set; }
     private void Awake() 
@@ -60,6 +65,23 @@ public class PalaceController: MonoBehaviour
         MorrisItemsList.Single(go => go.name == "Money").SetActive(true);
     }
 
+    public void ShowEndScreen()
+    {
+        EndScreen.SetActive(true);
+        StartCoroutine(ShowEndScreenCorutine());
+    }
+
+    public IEnumerator ShowEndScreenCorutine()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LoadFinalScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
+
     private void SetupPalaceController()
     {
         if (palaceController != null && palaceController != this) 
@@ -71,6 +93,4 @@ public class PalaceController: MonoBehaviour
             palaceController = this; 
         }
     }
-
-
 }
