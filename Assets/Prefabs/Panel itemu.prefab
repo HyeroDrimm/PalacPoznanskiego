@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Plik Weksli
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2703f2cf7b5d9c644ad7ad54b2d524f0, type: 2}
+  m_sharedMaterial: {fileID: -7677381761384607423, guid: 2703f2cf7b5d9c644ad7ad54b2d524f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 8335433164700860777}
   - component: {fileID: 2717891993245480421}
   - component: {fileID: 3724925260222337759}
+  - component: {fileID: 6166093361934673014}
   m_Layer: 5
   m_Name: Panel itemu
   m_TagString: Untagged
@@ -269,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.44705883}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.67058825}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -286,6 +287,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6166093361934673014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3465901056383795959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625e4efe8e6802e4abc0bd100fb49b82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4742917426379362450
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,8 +367,8 @@ MonoBehaviour:
   m_text: "Stosik \u015Bwie\u017Co wydrukowanych papier\xF3w warto\u015Bciowych.
     \n\nNa wydatki ma\u0142e i du\u017Ce. Przewidziane i te niekoniecznie."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2703f2cf7b5d9c644ad7ad54b2d524f0, type: 2}
+  m_sharedMaterial: {fileID: -7677381761384607423, guid: 2703f2cf7b5d9c644ad7ad54b2d524f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -489,8 +502,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Naci\u015Bnij dowolny klawisz aby wyj\u015B\u0107"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2703f2cf7b5d9c644ad7ad54b2d524f0, type: 2}
+  m_sharedMaterial: {fileID: -7677381761384607423, guid: 2703f2cf7b5d9c644ad7ad54b2d524f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

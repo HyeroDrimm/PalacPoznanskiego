@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -19,6 +20,8 @@ public class Catapult : MonoBehaviour
     [SerializeField] private float stengthChange = 0.01f;
     [SerializeField] private float angleChange;
     [SerializeField] private float strengthMultiplier = 10;
+    [SerializeField]
+    public AttemptsUi attemptsUi;
 
     private AimingState aimingState = AimingState.Shooting;
     private float angle = 0.5f;
@@ -80,6 +83,7 @@ public class Catapult : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R) && animationEnded)
             {
+                print(animationEnded);
                 Reload();
             }
         }
@@ -88,21 +92,31 @@ public class Catapult : MonoBehaviour
     private void Shoot()
     {
         moneyFollowPoznanski.SetEffectStatus(true);
+        animationEnded = false;
         lyzkaCollider.enabled = false;
         catapultAnimator.SetTrigger("DoIt");
+        StartCoroutine(WaitAndEnableAnimationEnded());
         catapultUi.SetVisibility(false);
         aimingState = AimingState.Idle;
         isLunched = true;
         var aimVector = Quaternion.AngleAxis(angle * 90, Vector3.forward) * Vector3.right;
         poznanski.AddForce(transform.TransformDirection(aimVector) * Mathf.Clamp01(strength + 0.1f) * strengthMultiplier);
         SFXController.specialEffects.PlayRandomVoiceSFX(transform);
+        attemptsUi.AddScore(1);
 
+    }
+
+    private IEnumerator WaitAndEnableAnimationEnded()
+    {
+        yield return new WaitForSeconds(1.5f);
+        animationEnded = true;
     }
 
     public void Reload()
     {
-        if(aimingState==AimingState.Idle)
+        if (aimingState == AimingState.Idle)
         {
+            aimingState = AimingState.Shooting;
             animationEnded = false;
             lyzkaCollider.enabled = true;
             catapultUi.SetVisibility(true);
@@ -113,7 +127,6 @@ public class Catapult : MonoBehaviour
             rotateCameraAroundTarget.TeleportToCatapult();
             scoreCounter.rb = newPoznanski.Spine1;
             moneyFollowPoznanski.poznanski = newPoznanski.Spine1.transform;
-            aimingState = AimingState.Shooting;
         }
     }
 

@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/palac_szymon.unity
     guid: 16f00f6538ce31241a2b0eda780ded0d
+  - enabled: 1
+    path: Assets/Scenes/Impreza.unity
+    guid: c933c70a6ac65194c93490cd4d93a463
   m_configObjects: {}
