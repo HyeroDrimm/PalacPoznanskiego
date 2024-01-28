@@ -14,6 +14,7 @@ public class ItemTrigger : MonoBehaviour
         {
             other.gameObject.tag = "Untagged";
             catapult.Reload();
+            catapult.isInMenu = true;
 
             Destroy(other.transform.root.gameObject);
             itemShowUi.gameObject.SetActive(true);
