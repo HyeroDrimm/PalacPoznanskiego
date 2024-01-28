@@ -745,6 +745,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a75ffe4bb92302b4faf1a697a75e08c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skinnedMeshRenderer: {fileID: 6460467001195240866}
+  materials:
+  - {fileID: 2100000, guid: 86d8245ed7297d34cac6c07c5dbec7af, type: 2}
+  - {fileID: 2100000, guid: a3056ede41094cc4f812e2ac409d03fb, type: 2}
+  - {fileID: 2100000, guid: 5fd38648a9a68744da11796563457aae, type: 2}
+  - {fileID: 2100000, guid: 1d4b7239ea7ebc64891cdad858a7b770, type: 2}
   Spine1: {fileID: 7844793936798843519}
 --- !u!1 &2993069442782790437 stripped
 GameObject:
@@ -1201,6 +1207,11 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!137 &6460467001195240866 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -619929780802934977, guid: e731fd2cbc4eb8640a4387712e3fb544, type: 3}
+  m_PrefabInstance: {fileID: 3372529422470888093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7155986578155402031 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3638193520734090830, guid: e731fd2cbc4eb8640a4387712e3fb544, type: 3}

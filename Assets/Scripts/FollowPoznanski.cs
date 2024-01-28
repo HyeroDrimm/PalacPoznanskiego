@@ -26,7 +26,6 @@ public class FollowPoznanski : MonoBehaviour
     {
             foreach (Transform child in transform)
             {
-                Debug.Log("Działaj kurwa");
                 child.gameObject.SetActive(_status);
             }
     }

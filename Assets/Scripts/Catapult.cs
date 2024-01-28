@@ -86,7 +86,6 @@ public class Catapult : MonoBehaviour
             {
                 if ((Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Space)) && animationEnded)
                 {
-                    print(animationEnded);
                     Reload();
                 }
             }
