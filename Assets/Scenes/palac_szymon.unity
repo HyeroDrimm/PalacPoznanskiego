@@ -1293,13 +1293,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568444191}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.79, z: -10}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 10.28, y: 3.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1633638339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2392,8 +2392,16 @@ PrefabInstance:
       value: PalacController
       objectReference: {fileID: 0}
     - target: {fileID: 5216243599759652913, guid: f601c719a5268c04481d45bc26ea37c0, type: 3}
-      propertyPath: AudioClipsList.Array.size
+      propertyPath: VoicesList.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5216243599759652913, guid: f601c719a5268c04481d45bc26ea37c0, type: 3}
+      propertyPath: VoicesList.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 034463da60850944c84f227cc41f9869, type: 3}
+    - target: {fileID: 5216243599759652913, guid: f601c719a5268c04481d45bc26ea37c0, type: 3}
+      propertyPath: AudioClipsList.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5216243599759652913, guid: f601c719a5268c04481d45bc26ea37c0, type: 3}
       propertyPath: AudioClipsList.Array.data[0]
