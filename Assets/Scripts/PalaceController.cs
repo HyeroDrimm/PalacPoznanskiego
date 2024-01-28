@@ -17,6 +17,7 @@ public class PalaceController: MonoBehaviour
         SetupPalaceController();
         SetUpMorrisItemsList();
         Debug.Log("Palac jest obsługiwany moj panie!"); 
+        Application.targetFrameRate=60;
     }
 
     public void UpdateStatus(string _palaceStates)

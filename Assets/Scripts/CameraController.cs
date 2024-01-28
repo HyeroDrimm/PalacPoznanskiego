@@ -66,7 +66,7 @@ public class CameraController : MonoBehaviour
             bulletTmp.GetComponent<Rigidbody>().AddForce(transform.forward*shootForce);
             Destroy(bulletTmp.gameObject, 10);
 
-            SFXController.specialEffects.CreateSFX("man-screaming", transform);
+            
         }
     }
 }

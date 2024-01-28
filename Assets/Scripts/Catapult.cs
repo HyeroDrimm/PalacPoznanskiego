@@ -95,23 +95,26 @@ public class Catapult : MonoBehaviour
         isLunched = true;
         var aimVector = Quaternion.AngleAxis(angle * 90, Vector3.forward) * Vector3.right;
         poznanski.AddForce(transform.TransformDirection(aimVector) * Mathf.Clamp01(strength + 0.1f) * strengthMultiplier);
+        SFXController.specialEffects.PlayRandomVoiceSFX(transform);
 
     }
 
     public void Reload()
     {
-        animationEnded = false;
-        lyzkaCollider.enabled = true;
-        catapultUi.SetVisibility(true);
-        moneyFollowPoznanski.SetEffectStatus(false);
-        var newPoznanski = Instantiate(poznanskiPrefab, reloadPoint.position, reloadPoint.rotation);
-        poznanski = newPoznanski.Spine1;
-        rotateCameraAroundTarget.poznanski = newPoznanski.Spine1.transform;
-        rotateCameraAroundTarget.TeleportToCatapult();
-        scoreCounter.rb = newPoznanski.Spine1;
-        moneyFollowPoznanski.poznanski = newPoznanski.Spine1.transform;
-        aimingState = AimingState.Shooting;
-        
+        if(aimingState==AimingState.Idle)
+        {
+            animationEnded = false;
+            lyzkaCollider.enabled = true;
+            catapultUi.SetVisibility(true);
+            moneyFollowPoznanski.SetEffectStatus(false);
+            var newPoznanski = Instantiate(poznanskiPrefab, reloadPoint.position, reloadPoint.rotation);
+            poznanski = newPoznanski.Spine1;
+            rotateCameraAroundTarget.poznanski = newPoznanski.Spine1.transform;
+            rotateCameraAroundTarget.TeleportToCatapult();
+            scoreCounter.rb = newPoznanski.Spine1;
+            moneyFollowPoznanski.poznanski = newPoznanski.Spine1.transform;
+            aimingState = AimingState.Shooting;
+        }
     }
 
     public void SetShootingState(AimingState aimingState)
