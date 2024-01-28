@@ -24,7 +24,7 @@ public class AttemptsUi : MonoBehaviour
     {
         attemptsValue+=_scoreIncrement;
         UpdateScore(attemptsValue.ToString());
-        if(attemptsValue>=10)
+        if(attemptsValue>10)
             PalaceController.palaceController.ShowEndScreen();
     }
 }
