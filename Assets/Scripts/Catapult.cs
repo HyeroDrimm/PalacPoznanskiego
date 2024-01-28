@@ -19,6 +19,8 @@ public class Catapult : MonoBehaviour
     [SerializeField] private float stengthChange = 0.01f;
     [SerializeField] private float angleChange;
     [SerializeField] private float strengthMultiplier = 10;
+      [SerializeField]
+    public AttemptsUi attemptsUi;
 
     private AimingState aimingState = AimingState.Shooting;
     private float angle = 0.5f;
@@ -96,6 +98,7 @@ public class Catapult : MonoBehaviour
         var aimVector = Quaternion.AngleAxis(angle * 90, Vector3.forward) * Vector3.right;
         poznanski.AddForce(transform.TransformDirection(aimVector) * Mathf.Clamp01(strength + 0.1f) * strengthMultiplier);
         SFXController.specialEffects.PlayRandomVoiceSFX(transform);
+        attemptsUi.AddScore(1);
 
     }
 

@@ -6,12 +6,19 @@ using UnityEngine;
 public class bulletCatcher : MonoBehaviour
 {
     [SerializeField]
+    private GameObject planks;
+    [SerializeField]
     private GuestGoalUI guestGoalUI;
     [SerializeField]
     private Catapult catapult;
+    private bool isHit;
+    private void Start()
+    {
+        isHit=true;
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player")&&!isHit)
         {
             other.gameObject.tag="Untagged";
             catapult.Reload();
@@ -19,7 +26,8 @@ public class bulletCatcher : MonoBehaviour
             {
                 Destroy(other.gameObject.transform.root.gameObject);
                 guestGoalUI.AddScore(1);
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
+                isHit=true;
             }
         }
     }

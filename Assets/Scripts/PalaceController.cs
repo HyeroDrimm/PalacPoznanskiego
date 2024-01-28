@@ -12,6 +12,7 @@ public class PalaceController: MonoBehaviour
     private List<GameObject> MorrisItemsList;
     [SerializeField]
     private List<GameObject> MorrisItemsImagesList;
+  
 
     [SerializeField]
     private GameObject EndScreen;
