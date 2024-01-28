@@ -17,6 +17,7 @@ public class bulletCatcher : MonoBehaviour
             catapult.Reload();
             if(this.gameObject.CompareTag("Goal"))
             {
+                Destroy(other.gameObject.transform.root.gameObject);
                 guestGoalUI.AddScore(1);
                 gameObject.SetActive(false);
             }
